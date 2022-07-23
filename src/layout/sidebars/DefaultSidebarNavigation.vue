@@ -4,7 +4,7 @@
 		<!--  -->
 		<template #title>Pages</template>
 		<!--  -->
-		<sidebar-link to="/">
+		<sidebar-link :to="{ name: 'home' }">
 			<template #icon>
 				<icon-dashboard />
 			</template>
@@ -43,7 +43,6 @@
 </template>
 
 <script setup lang="ts">
-import IconHome from "@/assets/icons/sidebar/IconHome.vue";
 import IconAbout from "@/assets/icons/sidebar/IconAbout.vue";
 import SidebarLinkGroup from "@/components/sidebar/SidebarLinkGroup.vue";
 import SidebarLink from "@/components/sidebar/SidebarLink.vue";

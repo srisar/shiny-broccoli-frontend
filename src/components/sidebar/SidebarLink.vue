@@ -14,10 +14,10 @@
 
 <script setup lang="ts">
 interface Props {
-	to: any;
+	to?: string | object;
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
 	to: "/",
 });
 </script>

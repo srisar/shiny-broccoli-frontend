@@ -5,9 +5,9 @@
 
 	<!-- Start: Main Content -->
 	<main class="" :class="storeLayout.getMainContentClasses">
-		<nav class="bg-zinc-400 h-20 flex items-center justify-start p-4">
+		<nav class="flex h-20 items-center justify-start bg-zinc-400 p-4">
 			<div class="">
-				<button class="w-[24px] justify-center items-center h-[24px] bg-white flex rounded-md" @click="storeLayout.toggleSidebar()">
+				<button class="flex h-[24px] w-[24px] items-center justify-center rounded-md bg-white" @click="storeLayout.toggleSidebar()">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						class="h-[16px] w-[16px] transition-all"
@@ -30,7 +30,7 @@
 	<!-- End: Main Content -->
 
 	<div
-		class="sidebar_overlay w-full h-full bg-zinc-800/20 absolute top-0 left-0 z-40 lg:hidden"
+		class="sidebar_overlay absolute top-0 left-0 z-40 h-full w-full bg-zinc-800/20 lg:hidden"
 		v-if="storeLayout.isSidebarVisible"
 		@click="storeLayout.toggleSidebar()"
 	></div>
