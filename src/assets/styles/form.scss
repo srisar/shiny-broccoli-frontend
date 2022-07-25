@@ -1,0 +1,21 @@
+.btn {
+	@apply rounded-md px-4 py-2 uppercase text-black-800 transition-all;
+}
+
+.btn.default {
+	@apply bg-blue-800 text-white hover:bg-blue-900;
+}
+
+.btn.secondary {
+	@apply bg-blue-800 text-white hover:bg-blue-900;
+}
+
+
+.input-group {
+	@apply mb-3;
+
+	span {
+		@apply ml-1 mt-1 block truncate text-sm text-black-700;
+	}
+
+}

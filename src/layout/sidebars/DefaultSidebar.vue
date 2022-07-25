@@ -1,10 +1,13 @@
 <template>
 	<!-- Start: Sidebar -->
-	<aside class="fixed z-50 flex h-full w-72 flex-col bg-zinc-700 shadow-md transition-all" :class="storeLayout.getSidebarClasses">
+	<aside
+		class="fixed z-50 flex h-full w-72 flex-col border-r border-r-black-200 bg-blue-900 text-white shadow-md transition-all"
+		:class="storeLayout.getSidebarClasses"
+	>
 		<!-- Start: Sidebar Header -->
-		<header class="h-20 w-full bg-white">
-			<div class="flex h-full w-full items-center justify-center bg-zinc-800">
-				<h1 class="text-2xl font-bold text-zinc-100">Shiny Broccoli</h1>
+		<header class="h-20 w-full bg-blue-800">
+			<div class="bg-zinc-800 flex h-full w-full items-center justify-center">
+				<h1 class="h1 text-indigo-900 font-bold">Shiny Broccoli</h1>
 			</div>
 		</header>
 		<!-- End: Sidebar Header -->
@@ -32,7 +35,7 @@ import AppInfo from "@/utilities/AppInfo";
 
 const storeLayout = useStoreLayout();
 
-const appVersion = ref(AppInfo.appVersion);
+const appVersion = ref(AppInfo.getVersion());
 </script>
 
 <style scoped></style>

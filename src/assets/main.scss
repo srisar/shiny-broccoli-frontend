@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "styles/form";
+
+html {
+	font-size: 14px;
+	@apply text-black-800;
+}
+
+
+.h1 {
+	@apply text-2xl;
+}
+
+.h2 {
+	@apply text-xl;
+}

@@ -1,5 +1,5 @@
 <template>
-	<base-app-layout> this is dashboard </base-app-layout>
+	<BaseAppLayout> hello! </BaseAppLayout>
 </template>
 
 <script setup lang="ts">

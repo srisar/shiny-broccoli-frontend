@@ -4,7 +4,7 @@
 		<!--  -->
 		<template #title>Pages</template>
 		<!--  -->
-		<sidebar-link :to="{ name: 'home' }">
+		<sidebar-link :to="{ name: 'dashboard' }">
 			<template #icon>
 				<icon-dashboard />
 			</template>
@@ -25,14 +25,14 @@
 		<!--  -->
 		<template #title>Stocks</template>
 		<!--  -->
-		<sidebar-link to="/">
+		<sidebar-link to="/a">
 			<template #icon>
 				<icon-items />
 			</template>
 			List Items
 		</sidebar-link>
 
-		<sidebar-link to="/about">
+		<sidebar-link to="/b">
 			<template #icon>
 				<icon-add />
 			</template>
