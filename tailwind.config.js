@@ -4,11 +4,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ["Viga", "sans-serif"],
-			},
-			fontWeight: {
-				semibold: 400,
-				bold: 400,
+				sans: ["Poppins", "sans-serif"],
 			},
 		},
 		container: {
@@ -16,9 +12,9 @@ module.exports = {
 		},
 		colors: {
 			white: "#ffffff",
-			warning: "#ffc048",
-			error: "#ff5e57",
-			success: "#0be881",
+			warning: "#e1b12c",
+			error: "#e84118",
+			success: "#44bd32",
 			info: "#0fbcf9",
 
 			black: {
@@ -31,13 +27,21 @@ module.exports = {
 				100: "#e9e9ea",
 			},
 
-			blue: {
+			primary: {
 				900: "#4357b7",
 				800: "#546de5",
 				700: "#768aea",
 				500: "#98a7ef",
 				200: "#ccd3f7",
 				100: "#eef0fc",
+			},
+			secondary: {
+				900: "#232e39",
+				800: "#2c3a47",
+				700: "#56616c",
+				500: "#969da3",
+				200: "#c0c4c8",
+				100: "#eaebed",
 			},
 		},
 	},

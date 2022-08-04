@@ -1,7 +1,7 @@
 <template>
 	<router-link
 		:to="to"
-		class="group mx-2 my-1 block flex items-center gap-2 rounded bg-blue-200 px-2 py-3 font-bold uppercase text-black-800 transition-all hover:bg-blue-100"
+		class="group mx-2 my-1 block flex items-center gap-2 rounded bg-primary-200 px-2 py-3 font-bold uppercase text-black-800 transition-all hover:bg-primary-100"
 	>
 		<div class="icon group-hover:text-amber-600 transition-all">
 			<slot name="icon"></slot>
@@ -24,9 +24,9 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped lang="scss">
 .router-link-active {
-	@apply bg-blue-100;
+	@apply bg-primary-100;
 	.icon {
-		@apply text-blue-900;
+		@apply text-primary-900;
 	}
 }
 </style>

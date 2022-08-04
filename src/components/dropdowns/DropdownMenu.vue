@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/vue";
 import { defineProps } from "vue";
-import DropdownTransition from "@/components/headless/DropdownTransition.vue";
+import DropdownTransition from "@/components/transitions/DropdownTransition.vue";
 
 interface IMenuItem {
 	label: string;
@@ -46,6 +46,6 @@ const props = withDefaults(defineProps<Props>(), {
 
 <style scoped>
 .menu-item {
-	@apply m-1 flex rounded p-2 hover:bg-blue-800 hover:text-white;
+	@apply m-1 flex rounded p-2 hover:bg-primary-800 hover:text-white;
 }
 </style>

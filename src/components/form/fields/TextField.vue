@@ -1,19 +1,13 @@
 <template>
-	<div class="flex w-full flex-col">
-		<label class="text-primary-content mb-1">{{ label }}</label>
-		<input
-			:type="inputType"
-			v-model="value"
-			class="mt-1 block w-full rounded-md shadow-sm focus:ring focus:ring-opacity-50"
-			:readonly="readonly"
-			:class="classList"
-		/>
-	</div>
+	<input class="mt-1 block w-full rounded-md" :class="computedClasses" :type="inputType" :readonly="readonly" v-model="model" />
 </template>
 
 <script setup lang="ts">
 import { computed, defineProps } from "vue";
-import { join } from "lodash";
+import { isEmpty, join, pull } from "lodash";
+
+/* -------------------------------------------------------------------------- */
+/* region Props, Emits */
 
 interface Props {
 	label?: string;
@@ -32,10 +26,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 const emits = defineEmits(["update:modelValue"]);
 
+/* endregion */
+/* --------- */
+
 /* -------------------------------------------------------------------------- */
 /* region Model Binding */
 
-const value = computed({
+const model = computed({
 	get() {
 		return props.modelValue;
 	},
@@ -48,10 +45,16 @@ const value = computed({
 /* --------- */
 
 /* -------------------------------------------------------------------------- */
-/* region Variant Classes */
+/* region Applied Classes */
 
-const classList = computed(() => {
-	const classList: string[] = [];
+const computedClasses = computed(() => {
+	let classList: string[] = [];
+
+	if (props.readonly) {
+		classList.push("focus:border-black-100 focus:outline-none focus:ring-0 border-black-100 cursor-default");
+	} else {
+		classList.push("shadow-sm focus:ring focus:ring-opacity-50");
+	}
 
 	if (props.invalid) {
 		classList.push("focus:ring-error focus:border-error border-error bg-error/10");

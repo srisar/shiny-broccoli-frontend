@@ -1,14 +1,14 @@
 import { get } from "lodash";
 
 export class Model {
-	public id: number | null;
-	public added_at: string | null;
-	public updated_at: string | null;
+	public id?: number;
+	public added_at?: string;
+	public updated_at?: string;
 
 	constructor(attributes: object) {
-		this.id = get(attributes, "id", null);
-		this.added_at = get(attributes, "added_at", null);
-		this.updated_at = get(attributes, "updated_at", null);
+		this.id = get(attributes, "id", undefined);
+		this.added_at = get(attributes, "added_at", undefined);
+		this.updated_at = get(attributes, "updated_at", undefined);
 	}
 
 	toString() {

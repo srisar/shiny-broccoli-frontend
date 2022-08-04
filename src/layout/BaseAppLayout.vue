@@ -5,13 +5,13 @@
 
 	<!-- Start: Main Content -->
 	<main class="" :class="storeLayout.getMainContentClasses">
-		<nav class="flex h-20 items-center justify-start bg-blue-100 p-4">
+		<nav class="flex h-20 items-center justify-start bg-primary-100 p-4">
 			<div class="mr-5">
 				<button
-					class="flex h-[24px] w-[24px] items-center justify-center rounded-md bg-blue-100 hover:bg-blue-200"
+					class="flex h-[24px] w-[24px] items-center justify-center rounded-md bg-primary-100 hover:bg-primary-200"
 					@click="storeLayout.toggleSidebar()"
 				>
-					<IconChevron :class="storeLayout.isSidebarVisible ? '' : 'rotate-180'" class="text-blue-800 transition-all" />
+					<IconChevron :class="storeLayout.isSidebarVisible ? '' : 'rotate-180'" class="text-primary-800 transition-all" />
 				</button>
 			</div>
 

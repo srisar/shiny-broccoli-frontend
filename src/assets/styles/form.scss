@@ -1,13 +1,22 @@
 .btn {
-	@apply rounded-md px-4 py-2 uppercase text-black-800 transition-all;
+	@apply rounded-md px-4 py-2 uppercase text-black-800 transition-all flex justify-center items-center gap-2;
 }
 
 .btn.default {
-	@apply bg-blue-800 text-white hover:bg-blue-900;
+	@apply bg-primary-800 text-white hover:bg-primary-900;
 }
 
 .btn.secondary {
-	@apply bg-blue-800 text-white hover:bg-blue-900;
+	@apply bg-secondary-800 text-white hover:bg-secondary-900;
+}
+
+.btn.ghost {
+	@apply bg-secondary-100 text-black-800 hover:bg-secondary-800 hover:text-secondary-100;
+}
+
+.btn.link {
+	@apply hover:underline text-primary-800;
+
 }
 
 

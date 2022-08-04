@@ -1,5 +1,7 @@
 import { Model } from "@/_backend/models/base";
 import { get } from "lodash";
+import { EnumUserStatus } from "@/_backend/req_res_interfaces/user/EnumUserStatus";
+import { EnumUserRole } from "@/_backend/req_res_interfaces/user/EnumUserRole";
 
 export class User extends Model {
 	static ROLE_ADMIN = "ADMIN";
@@ -13,23 +15,24 @@ export class User extends Model {
 	static STATUS_INACTIVE = "INACTIVE";
 
 	public username: string;
-	public role: string;
 	public email: string;
 	public full_name: string;
 	public profile_pic: string;
-	public status: string;
 	public password: string;
 	public confirm_password: string;
 
-	constructor(attributes: object) {
+	public role: EnumUserRole;
+	public status: EnumUserStatus;
+
+	constructor(attributes: object = {}) {
 		super(attributes);
 
 		this.username = get(attributes, "username", "");
-		this.role = get(attributes, "role", "USER");
 		this.email = get(attributes, "email", "");
 		this.full_name = get(attributes, "full_name", "");
 		this.profile_pic = get(attributes, "profile_pic", "");
-		this.status = get(attributes, "status", User.STATUS_ACTIVE);
+		this.role = get(attributes, "role", EnumUserRole.user);
+		this.status = get(attributes, "status", EnumUserStatus.active);
 
 		this.password = "";
 		this.confirm_password = "";

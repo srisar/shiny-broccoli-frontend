@@ -11,9 +11,18 @@ html {
 
 
 .h1 {
-	@apply text-2xl;
+	@apply text-2xl font-semibold;
 }
 
 .h2 {
 	@apply text-xl;
+}
+
+
+.icon {
+	@apply w-5 h-5;
+}
+
+.icon.small {
+	@apply w-4 h-4;
 }

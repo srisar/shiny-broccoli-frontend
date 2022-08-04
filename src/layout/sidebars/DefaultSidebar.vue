@@ -1,11 +1,11 @@
 <template>
 	<!-- Start: Sidebar -->
 	<aside
-		class="fixed z-50 flex h-full w-72 flex-col border-r border-r-black-200 bg-blue-900 text-white shadow-md transition-all"
+		class="fixed z-50 flex h-full w-72 flex-col border-r border-r-black-200 bg-primary-900 text-white shadow-md transition-all"
 		:class="storeLayout.getSidebarClasses"
 	>
 		<!-- Start: Sidebar Header -->
-		<header class="h-20 w-full bg-blue-800">
+		<header class="h-20 w-full bg-primary-800">
 			<div class="bg-zinc-800 flex h-full w-full items-center justify-center">
 				<h1 class="h1 text-indigo-900 font-bold">Shiny Broccoli</h1>
 			</div>

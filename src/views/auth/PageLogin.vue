@@ -3,32 +3,39 @@
 		<div class="container flex h-full items-center justify-center">
 			<!--  -->
 			<!-- Start: login form -->
-			<div class="w-96 items-center justify-center rounded-md border border-blue-200 shadow-lg shadow-blue-500/50">
-				<header class="mb-10 rounded-t bg-blue-800 p-5">
-					<h1 class="mb-2 text-center text-4xl text-white">Shiny Broccoli</h1>
-					<p class="text-indigo-200 text-center uppercase text-white">POS system</p>
+			<form
+				@submit.prevent="handleLogin()"
+				class="w-96 items-center justify-center rounded-md border border-primary-200 shadow-lg shadow-primary-500/50"
+			>
+				<header class="mb-10 rounded-t bg-primary-800 p-5">
+					<h1 class="mb-2 text-center text-4xl font-bold text-white">Shiny Broccoli</h1>
+					<p class="text-indigo-200 text-center font-semibold uppercase text-white">POS system</p>
 				</header>
 
 				<section class="p-5">
-					<div class="input-group">
-						<input-text label="Username" v-model="dataLogin.username" :invalid="vuelidate.username.$error" />
-						<span v-if="vuelidate.username.$error">{{ vuelidate.username.$errors[0].$message }}</span>
-					</div>
+					<FieldsRow>
+						<FieldGroup label="Username">
+							<TextField v-model="dataLogin.username" :invalid="v.username.$error" />
+							<LabelField v-if="v.username.$error" label-type="error">{{ v.username.$errors[0].$message }}</LabelField>
+						</FieldGroup>
+					</FieldsRow>
 
-					<div class="input-group">
-						<input-text input-type="password" label="Password" v-model="dataLogin.password" :invalid="vuelidate.password.$error" />
-						<span v-if="vuelidate.password.$error">{{ vuelidate.password.$errors[0].$message }}</span>
-					</div>
+					<FieldsRow>
+						<FieldGroup>
+							<TextField v-model="dataLogin.password" :invalid="v.password.$error" input-type="password" />
+							<LabelField v-if="v.password.$error" label-type="error">{{ v.password.$errors[0].$message }}</LabelField>
+						</FieldGroup>
+					</FieldsRow>
 				</section>
 
-				<div v-if="responseError.hasError" class="mb-1 text-center text-sm text-error">
+				<div v-if="responseError.hasError" class="mb-2 text-center text-sm text-error">
 					{{ responseError.message }}
 				</div>
 
 				<footer class="mb-5 flex justify-end gap-3 px-5">
 					<input-button variant="secondary" class="w-full" label="Login" @click="handleLogin()" />
 				</footer>
-			</div>
+			</form>
 			<!-- End: login form -->
 			<!--  -->
 		</div>
@@ -43,7 +50,11 @@ import { AuthService } from "@/services/auth_service";
 import { useRoute, useRouter } from "vue-router";
 
 import useVuelidate from "@vuelidate/core";
-import { required } from "@vuelidate/validators";
+import { required, helpers } from "@vuelidate/validators";
+import FieldsRow from "@/components/form/containers/FieldsRow.vue";
+import FieldGroup from "@/components/form/containers/FieldGroup.vue";
+import TextField from "@/components/form/fields/TextField.vue";
+import LabelField from "@/components/form/fields/LabelField.vue";
 
 /* -------------------------------------------------------------------------- */
 /* region Routes */
@@ -63,11 +74,11 @@ const dataLogin = reactive({
 });
 
 const validationRules = {
-	username: { required },
-	password: { required },
+	username: { required: helpers.withMessage("Username is required", required) },
+	password: { required: helpers.withMessage("Password is required", required) },
 };
 
-const vuelidate = useVuelidate(validationRules, dataLogin);
+const v = useVuelidate(validationRules, dataLogin);
 
 const responseError = reactive({
 	hasError: false,
@@ -83,7 +94,7 @@ const responseError = reactive({
 const handleLogin = async () => {
 	console.log("logging in...");
 
-	const isFormValid = await vuelidate.value.$validate();
+	const isFormValid = await v.value.$validate();
 
 	if (!isFormValid) return false;
 
