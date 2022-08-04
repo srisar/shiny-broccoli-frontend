@@ -5,14 +5,14 @@
 
 			<!-- Start: Form Fields -->
 			<div class="mb-10">
-				<FieldsRow class="grid-cols-2">
+				<FieldsRow class="grid-cols-1 lg:grid-cols-2">
 					<FieldGroup label="Username">
 						<TextField v-model="userToUpdate.username" readonly />
 						<LabelField>Username cannot be changed</LabelField>
 					</FieldGroup>
 				</FieldsRow>
 
-				<FieldsRow class="grid-cols-2">
+				<FieldsRow class="grid-cols-1 lg:grid-cols-2">
 					<FieldGroup label="Full name">
 						<TextField v-model="userToUpdate.full_name" :invalid="v.full_name.$error" />
 						<LabelField v-if="v.full_name.$error" label-type="error" v-for="error in v.full_name.$errors">{{ error.$message }}</LabelField>
