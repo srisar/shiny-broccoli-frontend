@@ -21,16 +21,16 @@
 	</sidebar-link-group>
 	<!-- End: Link Group -->
 
-	<sidebar-link-group>
+	<SidebarLinkGroup>
 		<!--  -->
-		<template #title>Stocks</template>
+		<template #title>Suppliers</template>
 		<!--  -->
-		<sidebar-link to="/a">
+		<SidebarLink :to="{ name: 'suppliers/all' }">
 			<template #icon>
-				<icon-items />
+				<IconSuppliers />
 			</template>
-			List Items
-		</sidebar-link>
+			All suppliers
+		</SidebarLink>
 
 		<sidebar-link to="/b">
 			<template #icon>
@@ -39,7 +39,7 @@
 			Add New
 		</sidebar-link>
 		<!--  -->
-	</sidebar-link-group>
+	</SidebarLinkGroup>
 </template>
 
 <script setup lang="ts">
@@ -49,6 +49,7 @@ import SidebarLink from "@/components/sidebar/SidebarLink.vue";
 import IconItems from "@/assets/icons/sidebar/IconItems.vue";
 import IconAdd from "@/assets/icons/sidebar/IconAdd.vue";
 import IconDashboard from "@/assets/icons/sidebar/IconDashboard.vue";
+import IconSuppliers from "@/assets/icons/sidebar/IconSuppliers.vue";
 </script>
 
 <style scoped></style>

@@ -13,9 +13,7 @@ import { AuthService } from "@/services/auth_service";
  * Init Axios service
  */
 
-AxiosService.init({
-	baseURL: AppInfo.getApiBaseURL(),
-});
+AxiosService.init({ baseURL: AppInfo.getApiBaseURL() });
 
 /*
  * Init Auth service

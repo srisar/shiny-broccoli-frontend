@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import { AuthService } from "@/services/auth_service";
 import { baseRoutes } from "@/router/base.routes";
 import { userRoutes } from "@/router/users/user.routes";
+import { suppliersRoutes } from "@/router/suppliers/suppliers.routes";
 
 /**
  * RouteMeta typings
@@ -16,7 +17,7 @@ declare module "vue-router" {
 /**
  * Routes list
  */
-const routes = [...baseRoutes, ...userRoutes];
+const routes = [...baseRoutes, ...userRoutes, ...suppliersRoutes];
 
 /**
  * Router
