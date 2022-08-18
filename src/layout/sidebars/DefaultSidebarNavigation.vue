@@ -32,7 +32,7 @@
 			All suppliers
 		</SidebarLink>
 
-		<sidebar-link to="/b">
+		<sidebar-link :to="{ name: 'suppliers/create' }">
 			<template #icon>
 				<icon-add />
 			</template>
@@ -46,7 +46,6 @@
 import IconAbout from "@/assets/icons/sidebar/IconAbout.vue";
 import SidebarLinkGroup from "@/components/sidebar/SidebarLinkGroup.vue";
 import SidebarLink from "@/components/sidebar/SidebarLink.vue";
-import IconItems from "@/assets/icons/sidebar/IconItems.vue";
 import IconAdd from "@/assets/icons/sidebar/IconAdd.vue";
 import IconDashboard from "@/assets/icons/sidebar/IconDashboard.vue";
 import IconSuppliers from "@/assets/icons/sidebar/IconSuppliers.vue";

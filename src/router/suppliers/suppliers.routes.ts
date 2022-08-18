@@ -7,7 +7,16 @@ export const suppliersRoutes = [
 		component: () => import("@/views/suppliers/all/PageViewSuppliers.vue"),
 		meta: {
 			requiresAuth: true,
-			accessList: User.ROLE_LIST_ALL,
+			accessList: User.ROLE_LIST_ADMIN_MANAGER,
+		},
+	},
+	{
+		path: "/suppliers/create",
+		name: "suppliers/create",
+		component: () => import("@/views/suppliers/create/PageCreateSupplier.vue"),
+		meta: {
+			requiresAuth: true,
+			accessList: User.ROLE_LIST_ADMIN_MANAGER,
 		},
 	},
 ];

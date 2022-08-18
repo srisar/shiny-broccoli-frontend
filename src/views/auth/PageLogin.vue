@@ -8,7 +8,7 @@
 				class="w-96 items-center justify-center rounded-md border border-primary-200 shadow-lg shadow-primary-500/50"
 			>
 				<header class="mb-10 rounded-t bg-primary-800 p-5">
-					<h1 class="mb-2 text-center text-4xl font-bold text-white">Shiny Broccoli</h1>
+					<h1 class="mb-2 text-center text-4xl font-bold text-white">Saravanas Inventory</h1>
 					<p class="text-indigo-200 text-center font-semibold uppercase text-white">POS system</p>
 				</header>
 

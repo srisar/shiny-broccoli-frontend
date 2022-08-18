@@ -1,5 +1,5 @@
 <template>
-	<input class="mt-1 block w-full rounded-md placeholder-black-300" :class="computedClasses" :type="inputType" :readonly="readonly" v-model="model" />
+	<textarea class="mt-1 block w-full rounded-md" :class="computedClasses" :readonly="readonly" v-model="model"></textarea>
 </template>
 
 <script setup lang="ts">
@@ -12,14 +12,12 @@ import { isEmpty, join, pull } from "lodash";
 interface Props {
 	label?: string;
 	modelValue?: string;
-	inputType?: "text" | "number" | "email" | "password";
 	invalid?: boolean;
 	readonly?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	label: "Text Label",
-	inputType: "text",
 	invalid: false,
 	readonly: false,
 });
